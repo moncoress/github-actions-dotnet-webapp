@@ -1,0 +1,27 @@
+name: Workflow Atividade Modulo 4 - GT4W 🧪
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 * * * *'  # Agendar o job para executar a cada hora
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Executar um script de uma linha
+        run: echo Hello, world!
+
+      - name: Executar um script de múltiplas linhas
+        run: |
+          echo Adicione outras ações para compilar,
+          echo testar e implantar seu projeto.
